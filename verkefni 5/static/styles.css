@@ -1,0 +1,88 @@
+body {
+  font-family: sans-serif;
+  margin:1em
+}
+header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+form {
+  margin-bottom: 1em;
+  border: 1px solid #aaa;
+  border-radius: .5em;
+  padding: 1em;
+  margin: 1em 0;
+}
+label {
+  color: #377d7d;
+  cursor: pointer;
+}
+input,
+select,
+textarea {
+  border: 1px solid #c6c9cc;
+  border-radius: 5px;
+  color: #444;
+  display: inline; /* block; */
+  margin: 0 1em .5em 0;
+  padding: .4em;
+}
+/* ath input type*/
+
+select {
+  height: 2em;
+  width: 5em;
+}
+input[type=text],
+input[type=email],
+textarea {
+  width: 97%;
+}
+textarea {
+  font-family: monospace;
+}
+input[type=submit] {
+
+  background-color:#273827;
+  background: linear-gradient(#273827, #507150 90%, #273827);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: .5em 1em;
+  margin:  1em;
+  border-radius: .3em;
+}
+input[type=submit]:hover,
+input[type=submit]:active  {
+  background: linear-gradient(to bottom, #667, #330);
+  color:#faa;
+}
+table {
+  font-family: arial, sans-serif;
+  border: 1px solid #222;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #bbb;
+  text-align: left;
+  padding: 8px;
+  width: 50%;
+}
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+.hide {
+    display: none;
+}
+
+@media screen and (min-width: 30em) {
+  body {
+    margin:2em 4em;
+    max-width: 30em;
+  }
+  form {
+    margin: 1em 0;
+  }
+}
