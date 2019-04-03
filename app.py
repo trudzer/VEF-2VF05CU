@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8\n\xec]/'
 print(os.urandom(16))
 
-conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='0211982189', password='mypassword', database='0211982189verk7')
+conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='0211982189', password='mypassword', database='0211982189_verk7')
 
 @app.route('/')
 def inndex():
@@ -28,7 +28,7 @@ def nyr():
         password = userDetails['user_passwords']
         try:
             cur = conn.cursor()
-            cur.execute("INSERT INTO 0211982189verk7.user(user, email, name) VALUES(%s,%s,%s)",(user,name,email))
+            cur.execute("INSERT INTO 0211982189_verk7.user(user, email, name) VALUES(%s,%s,%s)",(user,name,email))
             conn.commit()
             cur.close()
             flash('Þú hefur verið skráður inn í gagnagrunninn')
@@ -41,7 +41,7 @@ def nyr():
 @app.route('/users')
 def users():
     cur = conn.cursor()
-    resultValue = cur.execute("SELECT * FROM 0211982189verk7.users")
+    resultValue = cur.execute("SELECT * FROM 0211982189_verk7.users")
     if resultValue > 0:
         userDetails = cur.fetchall()
         return render_template('users.tpl',userDetails=userDetails)
@@ -55,7 +55,7 @@ def login():
 
         conn = pymysql.connect(host='tsuts.tskoli.is', port=3306,user='0211982189',password='mypassword')
         cur = conn.cursor()
-        cur.execute("SELECT count(*) FROM 0211982189verk7.users where user_name=%s and user_password=%s")
+        cur.execute("SELECT count(*) FROM 0211982189_verk7.users where user_name=%s and user_password=%s")
         result = cur.fetchone()
         print (result)
 
@@ -76,7 +76,7 @@ def admin():
     else:
         try:
             cur = conn.cursor()
-            resultValue = cur.execute("SELECT * FROM 0211982189verk7.users")
+            resultValue = cur.execute("SELECT * FROM 0211982189_verk7.users")
             if resultValue > 0:
                 userDetails = cur.fetchall()
                 flash('velkominn')
