@@ -25,10 +25,10 @@ def nyr():
         userDetails = request.form
         user = userDetails['user_name']
         email = userDetails['user_email']
-        password = userDetails['user_passwords']
+        password = userDetails['user_password']
         try:
             cur = conn.cursor()
-            cur.execute("INSERT INTO 0211982189_verk7.user(user, email, name) VALUES(%s,%s,%s)",(user,name,email))
+            cur.execute("INSERT INTO 0211982189_verk7.users(user_name, user_email, user_password) VALUES(%s,%s,%s)",(user,email,password))
             conn.commit()
             cur.close()
             flash('Þú hefur verið skráður inn í gagnagrunninn')
