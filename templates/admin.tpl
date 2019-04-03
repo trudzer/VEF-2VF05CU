@@ -7,6 +7,8 @@
 <table>
     <tr>
         <th>Nafn</th>
+        <th>Email</th>
+        <th>password</th>
     </tr>
     {% for user in userDetails %}
     <tr>
