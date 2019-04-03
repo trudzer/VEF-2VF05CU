@@ -6,7 +6,7 @@ import pymysql.cursors
 import pymysql
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8\n\xec]/'
+app.secret_key = os.urandom(16)
 print(os.urandom(16))
 
 conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='0211982189', password='mypassword', database='0211982189_verk7')
