@@ -55,7 +55,7 @@ def login():
 
         conn = pymysql.connect(host='tsuts.tskoli.is', port=3306,user='0211982189',password='mypassword')
         cur = conn.cursor()
-        cur.execute("SELECT count(*) FROM 0211982189_verk7.users where user_name=%s and user_password=%s")
+        cur.execute("SELECT count(*) FROM 0211982189_verk7.users where user_name=%s and user_password=%s",(user, passw))
         result = cur.fetchone()
         print (result)
 
